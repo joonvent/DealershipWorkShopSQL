@@ -1,6 +1,5 @@
 package com.yearup.dealership.models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class LeaseContract {
@@ -53,7 +52,7 @@ public class LeaseContract {
         return leaseEnd;
     }
 
-    public void setLeaseEnd(LocalDate leaseEnd) {
+    public void setLeaseEnd() {
         this.leaseEnd = leaseEnd;
     }
 

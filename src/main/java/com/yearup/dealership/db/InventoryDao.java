@@ -19,8 +19,8 @@ public class InventoryDao {
     public void addVehicleToInventory(String vin, int dealershipId) {
         // TODO: Implement the logic to add a vehicle to the inventory
         String query = "INSERT into Inventory (vin , dealership) VALUES (?,?)";
-        try(Connection connection = dataSource.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, vin);
             preparedStatement.setInt(2, dealershipId);
@@ -28,28 +28,27 @@ public class InventoryDao {
             int rows = preparedStatement.executeUpdate();
             System.out.println(rows + "Added to Inventory");
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
 
-
     }
 
-        public void removeVehicleFromInventory(String vin){
-            // TODO: Implement the logic to remove a vehicle from the inventory
+    public void removeVehicleFromInventory(String vin) {
+        // TODO: Implement the logic to remove a vehicle from the inventory
 
-            String query = "DELETE FROM INVENTORY WHERE VIN = ?";
+        String query = "DELETE FROM INVENTORY WHERE VIN = ?";
 
-            try(Connection connection = dataSource.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
-                preparedStatement.setString(1, vin);
+            preparedStatement.setString(1, vin);
 
-                int rows = preparedStatement.executeUpdate();
-                System.out.println(rows + "Changes have been made:");
-            }catch (Exception ex ){
-                ex.printStackTrace();
+            int rows = preparedStatement.executeUpdate();
+            System.out.println(rows + "Changes have been made:");
+        } catch (Exception ex) {
+            ex.printStackTrace();
 
         }
     }

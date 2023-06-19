@@ -18,8 +18,8 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
-        String username = args[0];
-        String password = args[1];
+        String username = "root";
+        String password = "Peanut831?";
 
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/car_dealership");
